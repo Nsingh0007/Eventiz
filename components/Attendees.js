@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
-import { useTable } from "react-table";
+import { useSortBy, useTable } from "react-table";
 import { updateRegLink } from "../utils/util";
 import DisableReg from "./DisableReg";
-
+import checkImage from '../images/check-circle.svg'
+import crossImage from '../images/xbox-x.svg'
+import Image from "next/image";
 const Attendees = ({
 	attendees,
 	id,
@@ -11,10 +13,16 @@ const Attendees = ({
 	setClick,
 	disableRegModal,
 	setDisableRegModal,
+
 }) => {
 	const [passcode, setPasscode] = useState("");
 	const [attendeeState, setAttendees] = useState(attendees);
 	const data = React.useMemo(() => attendeeState);
+	const sortedColumn=()=>{
+	
+		let newAttendes=attendeeState.sort((a, b) => (a.isAttended > b.isAttended ? -1 : 1));
+		setAttendees(newAttendes)
+		}
 	const columns = React.useMemo(
 		() => [
 			{
@@ -29,11 +37,15 @@ const Attendees = ({
 				Header: "Email",
 				accessor: "email",
 			},
+			{
+				Header: "Attended",
+				accessor: "isAttended",
+			},
 		],
 		[]
 	);
-	const table = useTable({ columns, data });
-	const { getTableProps, getTableBodyProps, headerGroups, prepareRow, rows } =
+	const table = useTable({ columns, data },useSortBy);
+	const { getTableProps, getTableBodyProps, headerGroups, prepareRow, rows, } =
 		table;
 
 	const handleSearch = () => {
@@ -109,11 +121,12 @@ const Attendees = ({
 					<thead className='sticky top-0 bg-white z-10'>
 						{headerGroups.map((headerGroup) => (
 							<tr {...headerGroup.getHeaderGroupProps()}>
-								{headerGroup.headers.map((column) => (
-									<th {...column.getHeaderProps()}>
+								{headerGroup.headers.map((column) => {
+									
+									return(<th onClick={()=>column.id=="isAttended"?column.toggleSortBy(!column.isSortedDesc):{}}  {...column.getHeaderProps()}>
 										{column.render("Header")}
-									</th>
-								))}
+									</th>)
+})}
 							</tr>
 						))}
 					</thead>
@@ -124,6 +137,16 @@ const Attendees = ({
 							return (
 								<tr {...row.getRowProps()}>
 									{row.cells.map((cell) => {
+										
+										if(cell.column.id=="isAttended"){
+											return  <td {...cell.getCellProps()}>
+												<Image
+											src={cell.value?checkImage:crossImage}
+											alt='icons'
+									
+											className='w-9 mx-auto aspect-square'
+										/></td>
+										}
 										return (
 											<td {...cell.getCellProps()}>{cell.render("Cell")}</td>
 										);

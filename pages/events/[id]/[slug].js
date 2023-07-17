@@ -32,7 +32,8 @@ const ListEvent = ({ firebaseEvent }) => {
 	const openModal = () => setShowModal(true);
 	const closeModal = () => setShowModal(false);
 	const router = useRouter();
-
+	let attendedUsers=firebaseEvent.attendees.filter(user=>user.isAttended).length
+  console.log("firebase=>>>",firebaseEvent,attendedUsers)
 	if (!firebaseEvent.title) return <ErrorPage />;
 
 	return (
@@ -52,12 +53,26 @@ const ListEvent = ({ firebaseEvent }) => {
 						{firebaseEvent.title}
 					</h2>
 					{firebaseEvent.attendees.length > 0 && (
+						<>
 						<p className='text-xl font-extrabold mb-6 text-white'>
 							Total Attendees:{" "}
 							<span className='text-white'>
 								{firebaseEvent.attendees.length}
 							</span>
 						</p>
+						<p className='text-xl font-extrabold mb-6 text-white'>
+							Attended:{" "}
+							<span className='text-white'>
+								{attendedUsers}
+							</span>
+						</p>
+						<p className='text-xl font-extrabold mb-6 text-white'>
+							Not Attended:{" "}
+							<span className='text-white'>
+								{firebaseEvent.attendees.length-attendedUsers}
+							</span>
+						</p>
+						</>
 					)}
 				</div>
 				<Attendees

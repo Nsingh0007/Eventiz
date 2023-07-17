@@ -238,10 +238,8 @@ export const registerAttendee = async (
   QRCode.toDataURL(passcode, {type: "png"})
     .then(img => {
       image=img
-      console.log("image=>>",img)
-       // Then you can do whatever you want with this img
+
     })
-  // console.log("qrcode=>>>",qrCode)
   const eventRef = doc(db, "events", event_id);
   const eventSnap = await getDoc(eventRef);
   let firebaseEvent = {};
@@ -255,6 +253,7 @@ export const registerAttendee = async (
           name,
           email,
           passcode,
+          isAttended:false
         }),
       });
 
