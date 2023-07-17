@@ -8,7 +8,7 @@
 <img width="1264" alt="Event ticketing system" src="https://github.com/Nsingh0007/eventtiz/assets/67129211/c7282244-6b1c-49e0-918e-1bfc1097a26c">
 
 ## Live Demo
-[View Live Version](https://eventtiz.vercel.app)
+[View Live Version](https://eventiz.vercel.app)
 
 ## Installation
 - Clone the project repository. Don't forget to star the repo 😉
