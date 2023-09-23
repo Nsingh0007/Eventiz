@@ -17,7 +17,7 @@ const RegClosed = ({ event }) => {
 			<main className='w-full h-[100vh] flex flex-col items-center justify-center bg-orange-50'>
 				<h2 className='text-2xl font-bold mb-6'>Registration closed! 😪</h2>
 				<p>
-					<Link href='/' className="text-orange-500">{event.title}</Link>{" "}
+					<Link href='/' className="text-orange-500">MoreYeahs</Link>{" "}
 				</p>
 				<p className='opacity-50 text-md text-center'>
 					&copy; Copyright {new Date().getFullYear()}{" "}

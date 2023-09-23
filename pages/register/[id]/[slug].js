@@ -101,7 +101,7 @@ const RegisterPage = ({ event }) => {
 					</form>
 					<div className='absolute bottom-5 left-5'>
 						<p className='opacity-50 text-sm'>
-							<Link href='/'>{event.title}</Link> &copy; Copyright{" "}
+							<Link href='/'>MoreYeahs</Link> &copy; Copyright{" "}
 							{new Date().getFullYear()}{" "}
 						</p>
 					</div>
@@ -113,7 +113,7 @@ const RegisterPage = ({ event }) => {
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by Nitesh Singh
+							Built by MoreYeahs
 						</a>
 					</div>
 				</div>

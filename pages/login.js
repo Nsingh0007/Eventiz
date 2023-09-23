@@ -76,7 +76,7 @@ const login = () => {
 					</form>
 					<div className='absolute bottom-5 left-5'>
 						<p className='opacity-50 text-sm'>
-							<Link href='/'>EventTiz</Link> &copy; Copyright{" "}
+							<Link href='/'>MoreYeahs</Link> &copy; Copyright{" "}
 							{new Date().getFullYear()}{" "}
 						</p>
 					</div>
@@ -88,7 +88,7 @@ const login = () => {
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by Nitesh Singh
+							Built by MoreYeahs
 						</a>
 					</div>
 				</div>
