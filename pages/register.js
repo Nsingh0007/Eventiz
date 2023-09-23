@@ -109,7 +109,7 @@ const register = () => {
 						</p>
 					</div>
 				</div>
-				<div className='register md:w-[40%] h-[100vh] relative'>
+				{/* <div className='register md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
 							href='https://github.com/Nsingh0007'
@@ -119,7 +119,7 @@ const register = () => {
 							Built by MoreYeahs
 						</a>
 					</div>
-				</div>
+				</div> */}
 			</main>
 		</div>
 	);

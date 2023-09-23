@@ -106,7 +106,7 @@ const RegisterPage = ({ event }) => {
 						</p>
 					</div>
 				</div>
-				<div className='login md:w-[40%] h-[100vh] relative'>
+				{/* <div className='login md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
 							href='https://github.com/Nsingh0007'
@@ -116,7 +116,7 @@ const RegisterPage = ({ event }) => {
 							Built by MoreYeahs
 						</a>
 					</div>
-				</div>
+				</div> */}
 				{success && (
 					<div className='w-full h-[100vh] dim absolute top-0 flex items-center justify-center z-40'>
 						<div className='w-[400px] bg-white h-[300px] flex items-center justify-center flex-col rounded-md shadow-[#FFD95A] shadow-md'>

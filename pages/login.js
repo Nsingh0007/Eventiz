@@ -81,7 +81,7 @@ const login = () => {
 						</p>
 					</div>
 				</div>
-				<div className='login md:w-[40%] h-[100vh] relative'>
+				{/* <div className='login md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
 							href='https://github.com/Nsingh0007'
@@ -91,7 +91,7 @@ const login = () => {
 							Built by MoreYeahs
 						</a>
 					</div>
-				</div>
+				</div> */}
 			</main>
 		</div>
 	);
