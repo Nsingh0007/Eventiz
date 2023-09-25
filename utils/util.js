@@ -231,8 +231,8 @@ export const registerAttendee = async (
 ) => {
   setLoading(true);
   const passcode = generateID();
+  console.log("🚀 ~ file: util.js:234 ~ passcode:", passcode)
   let image;
-  console.log("qrcode=>>>", passcode);
   QRCode.toDataURL(passcode, { type: "png" }).then((img) => {
     image = img;
   });
