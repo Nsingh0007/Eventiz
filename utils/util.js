@@ -34,6 +34,8 @@ const sendEmail = (
   date,
   note,
   description,
+  venue,
+  qr,
   passcode,
   flier_url,
   setSuccess,
@@ -51,7 +53,9 @@ const sendEmail = (
         date,
         note,
         description,
+        venue,
         passcode,
+        qr,
         flier_url,
       },
       process.env.NEXT_PUBLIC_API_KEY
@@ -230,7 +234,7 @@ export const registerAttendee = async (
   setLoading
 ) => {
   setLoading(true);
-  const passcode = generateID();
+  const passcode = generateID().toUpperCase();
   console.log("🚀 ~ file: util.js:234 ~ passcode:", passcode)
   let image;
   QRCode.toDataURL(passcode, { type: "png" }).then((img) => {
@@ -264,7 +268,9 @@ export const registerAttendee = async (
         firebaseEvent.date,
         firebaseEvent.note,
         firebaseEvent.description,
+        firebaseEvent.venue,
         image,
+        passcode,
         flierURL,
         setSuccess,
         setLoading
