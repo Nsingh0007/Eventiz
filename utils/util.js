@@ -11,7 +11,7 @@ import {
   deleteObject,
 } from "@firebase/storage";
 import db, { storage, auth } from "./firebase";
-import  QRCode  from "qrcode";
+import QRCode from "qrcode";
 import emailjs from "@emailjs/browser";
 import {
   getDoc,
@@ -25,8 +25,6 @@ import {
   where,
   arrayUnion,
 } from "@firebase/firestore";
-
-
 
 const sendEmail = (
   name,
@@ -234,12 +232,10 @@ export const registerAttendee = async (
   setLoading(true);
   const passcode = generateID();
   let image;
-  console.log("qrcode=>>>",passcode)
-  QRCode.toDataURL(passcode, {type: "png"})
-    .then(img => {
-      image=img
-
-    })
+  console.log("qrcode=>>>", passcode);
+  QRCode.toDataURL(passcode, { type: "png" }).then((img) => {
+    image = img;
+  });
   const eventRef = doc(db, "events", event_id);
   const eventSnap = await getDoc(eventRef);
   let firebaseEvent = {};
@@ -253,7 +249,7 @@ export const registerAttendee = async (
           name,
           email,
           passcode,
-          isAttended:false
+          isAttended: false,
         }),
       });
 
@@ -268,7 +264,7 @@ export const registerAttendee = async (
         firebaseEvent.date,
         firebaseEvent.note,
         firebaseEvent.description,
-      image,
+        image,
         flierURL,
         setSuccess,
         setLoading
