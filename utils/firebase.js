@@ -14,14 +14,14 @@ import { getStorage } from "firebase/storage";
 // 	measurementId: "G-25R0S4XSE6",
 // };
 const firebaseConfig = {
-	apiKey: "AIzaSyBThFmsKjEgkoXkRYGXTlBsm60I3PGCtyw",
-	authDomain: "eventdemo-4242f.firebaseapp.com",
-	projectId: "eventdemo-4242f",
-	storageBucket: "eventdemo-4242f.appspot.com",
-	messagingSenderId: "964425145645",
-	appId: "1:964425145645:web:d566619dd990f316fc07a4"
-  };
-  
+  apiKey: "AIzaSyCIv2kSX3dzvaWTaMv7z-XPZGK3bWtGcEw",
+  authDomain: "events-61c0b.firebaseapp.com",
+  projectId: "events-61c0b",
+  storageBucket: "events-61c0b.appspot.com",
+  messagingSenderId: "979765040245",
+  appId: "1:979765040245:web:3d2d205fbcae03e84dd43c",
+  measurementId: "G-9Z18RCJ4BV",
+};
 
 // Initialize Firebase
 let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
